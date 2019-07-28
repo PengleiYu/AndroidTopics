@@ -31,10 +31,12 @@ class MainActivity : AppCompatActivity() {
         val builder = Notification.Builder(this, channelId)
             .setSmallIcon(R.drawable.ic_notifications_active_black_24dp)
             .setContentTitle("Content Title")
-            .setContentText("Content Text")
+            .setContentText("Content Text, Content Text, Content Text, Content Text, Content Text, ")
             .setWhen(System.currentTimeMillis() - 1 * 60 * 60 * 1000)
             .setShowWhen(true)
             .setAutoCancel(true)
+            .setStyle(Notification.BigTextStyle()
+                .bigText("Hello this is Big text, Hello this is Big text, Hello this is Big text, "))
         with(NotificationManagerCompat.from(this)) {
             notify(notifyId, builder.build())
         }
